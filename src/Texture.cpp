@@ -22,6 +22,11 @@ Texture::Texture( Vector2D<float> size ) : ScreenComponent( size ) {
 	_textureSize = Vector2D<int>( 0, 0 );
 }
 
+Texture::Texture( Vector2D<float> size, Vector2D<float> pos ) : ScreenComponent( size, pos ) {
+	_texture = NULL;
+	_textureSize = Vector2D<int>( 0, 0 );
+}
+
 Texture::~Texture() {
 	free();
 }

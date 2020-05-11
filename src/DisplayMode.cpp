@@ -28,7 +28,6 @@ void Relative::positionComponents( SDL_Rect* clippingRectangle, std::list<Screen
         } else {
             int compWidth = comp->getRenderSize().getFirst();
             int compHeight = comp->getRenderSize().getSecond();
-            if ( compHeight > nextY ) { nextY = compHeight; }
             if ( compWidth > w - nextX ) {
                 currY = nextY;
                 nextY += compHeight;
@@ -38,6 +37,7 @@ void Relative::positionComponents( SDL_Rect* clippingRectangle, std::list<Screen
                 comp->setRenderPosition( Vector2D<int>( nextX, currY ) + Vector2D<int>( x, y ) );
                 nextX += compWidth;
             }
+            if ( compHeight > nextY ) { nextY = compHeight; }
         }
     }
 }

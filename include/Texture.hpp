@@ -10,6 +10,7 @@ class Texture : public ScreenComponent {
 		Texture( Vector2D<int> size );
         Texture( Vector2D<int> size, Vector2D<int> position );
         Texture( Vector2D<float> size );
+		Texture( Vector2D<float> size, Vector2D<float> pos );
 		~Texture();
 
 		bool load( SDL_Renderer* renderer, std::string path, SDL_Color colorKey = { 255, 255, 255, 255 } );

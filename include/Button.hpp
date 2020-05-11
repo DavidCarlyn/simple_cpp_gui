@@ -7,6 +7,7 @@
 class Button : public ScreenComponent, public MouseListener {
     public:
         Button() { _state = BASE; _textTexture = NULL; }
+        ~Button() { _actionListeners.clear(); }
         Button( Vector2D<int> size, Vector2D<int> position = Vector2D<int>( 0, 0 ) ) : ScreenComponent( size, position ) { _state = BASE; _textTexture = NULL; }
         Button( Vector2D<float> size, Vector2D<float> position = Vector2D<float> ( 0.0f, 0.0f ) ) : ScreenComponent( size, position ) { _state = BASE; _textTexture = NULL; }
         Button( Vector2D<int> size, Vector2D<float> position ) : ScreenComponent( size, position ) { _state = BASE; _textTexture = NULL; }

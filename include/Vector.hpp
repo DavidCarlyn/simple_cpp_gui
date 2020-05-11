@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 template <class T>
 class Vector2D {
     public:
@@ -26,6 +28,10 @@ class Vector2D {
 
         Vector2D<T> operator/( const Vector2D<T>& rhs ) {
             return Vector2D<T>( _v0 / rhs._v0, _v1 / rhs._v1 );
+        }
+
+        std::string toString() {
+            return "First: " + std::to_string( _v0 ) + ", Second: " + std::to_string( _v1 );
         }
 
         bool equals( Vector2D rhs ) { return rhs.getFirst() == _v0 && rhs.getSecond() == _v1; }

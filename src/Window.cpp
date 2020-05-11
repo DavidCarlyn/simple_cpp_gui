@@ -25,6 +25,7 @@ Window::Window( std::string name, Vector2D<int> size ) {
 	_windowPanel->setRenderSize( size );
 
 	addMouseListener( _windowPanel );
+	addKeyListener( _windowPanel );
 }
 
 Window::~Window() {
